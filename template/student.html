@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login | Smart Result Analysis</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-logo">🎓 Student Portal</h1>
+      <a href="/template/index.html" class="btn btn-ghost">← Back to Home</a>
+    </div>
+  </nav>
+
+  <div class="login-view">
+    <div class="login-container">
+      <div class="login-card">
+        <div class="login-header">
+          <div class="login-icon">🎓</div>
+          <h2>Student Login</h2>
+          <p>Access your personal performance dashboard</p>
+        </div>
+        <form id="student-login-form" action="/student" method="POST">
+          <div class="form-group">
+            <label for="student-username">Email</label>
+            <input type="email" id="student-username" name="email" placeholder="student@college.edu" required>
+          </div>
+          <div class="form-group">
+            <label for="student-password">Password</label>
+            <input type="password" id="student-password" name="password" placeholder="Enter password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+        <div class="demo-credentials">
+          <p>Demo: student@demo.com / student123</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
