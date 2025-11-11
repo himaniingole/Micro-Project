@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard | Smart Result Analysis</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+    }
+    .chart-container {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: center;
+      padding: 0.75rem;
+    }
+    th {
+      background: #f3f4f6;
+      color: #111827;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+    .btn-logout {
+      background: #ef4444;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background 0.2s;
+    }
+    .btn-logout:hover {
+      background: #dc2626;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-sm sticky top-0 z-20">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-semibold text-indigo-600">Smart Result Analysis</h1>
+      <button class="btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard-container max-w-7xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="card">
+        <h3 class="text-lg font-semibold text-gray-600">Total Students</h3>
+        <p id="total-count" class="text-3xl font-bold text-indigo-600 mt-2">0</p>
+      </div>
+      <div class="card">
+        <h3 class="text-lg font-semibold text-gray-600">Pass Count</h3>
+        <p id="pass-count" class="text-3xl font-bold text-green-600 mt-2">0</p>
+      </div>
+      <div class="card">
+        <h3 class="text-lg font-semibold text-gray-600">Fail Count</h3>
+        <p id="fail-count" class="text-3xl font-bold text-red-500 mt-2">0</p>
+      </div>
+      <div class="card">
+        <h3 class="text-lg font-semibold text-gray-600">Average SGPA</h3>
+        <p id="avg-sgpa" class="text-3xl font-bold text-blue-600 mt-2">0.00</p>
+      </div>
+    </div>
+
+    <!-- Pass Rate -->
+    <div class="text-center">
+      <h2 class="text-xl font-semibold text-gray-700">Class Pass Rate</h2>
+      <p id="pass-rate" class="text-4xl font-bold text-emerald-600 mt-1">0%</p>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="chart-container">
+        <canvas id="performanceChart" height="180"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="gradePie" height="180"></canvas>
+      </div>
+    </div>
+
+    <!-- Top 5 Toppers -->
+    <div class="bg-white rounded-2xl shadow-sm p-6 mt-10">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">🏆 Top 5 Toppers</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-200 rounded-lg">
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>UID</th>
+              <th>Name</th>
+              <th>Total Marks</th>
+              <th>SGPA</th>
+              <th>CGPA</th>
+            </tr>
+          </thead>
+          <tbody id="topper-table-body" class="text-gray-700">
+            <tr><td colspan="7" class="py-4 text-gray-400">No data yet</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Firebase + App Script -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

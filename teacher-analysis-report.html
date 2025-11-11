@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Report | Teacher</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script src="script.js" defer type="module"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">👩‍🏫 Detailed Analysis Report</h1>
+            <nav class="nav-links">
+                <a href="teacher-dashboard.html" class="btnave">Dashboard</a>
+                <a href="teacher-upload.html" class="btnave">Upload New File</a>
+            </nav>
+            <a href="#" class="btn btn-outline-red btn-logout">Logout</a>
+        </div>
+    </nav>
+
+    <div class="dashboard-container" id="teacher-analysis-report-page"> 
+        <div class="dashboard-header">
+            <h1>Individual Student Report Lookup</h1>
+            <p>Search for individual results using the student's Roll Number (UID) based on the latest uploaded file.</p>
+        </div>
+
+        <div class="tab-grid">
+            <div class="card full-width">
+                <div class="card-header"><h3>Individual Student Result Lookup</h3></div>
+                <div class="card-content">
+                    <div class="form-group">
+                        <label for="student-uid-input">Enter Roll No / UID:</label>
+                        <div class="input-with-button">
+                            <input type="text" id="student-uid-input" placeholder="e.g., 2024/001" class="input-field">
+                            <button id="lookup-btn-report" class="btn btn-primary">Find Result</button>
+                        </div>
+                        <div id="lookup-result-report" class="result-display-area"> 
+                            <p>Enter a Roll No and click 'Find Result' to see the individual performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="analysis-report-main-content">
+                </div>
+        </div>
+    </div>
+</body>
+</html>

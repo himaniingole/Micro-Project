@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Result File | Teacher</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  
+  <script src="script.js" defer type="module"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-logo">👩‍🏫 Upload Result File</h1>
+      <a href="#" class="btn btn-outline-red btn-logout">Logout</a> 
+    </div>
+  </nav>
+
+  <div class="dashboard-container" id="teacher-upload-page">
+    <div class="dashboard-header">
+      <h1>Step 1: Upload Result Data</h1>
+      <p>Please upload the result file in **CSV** format. Ensure the first row contains headers like 'UID', 'Name', 'Total Marks', and 'Max Marks'.</p>
+    </div>
+
+    <div class="card upload-card">
+      <div class="card-header"><h3>📂 Upload File</h3></div>
+      <div class="card-content">
+        <form id="upload-form" onsubmit="return false;">
+  <div id="drop-area">
+    <input type="file" id="fileElem" accept=".csv" />
+    <p id="file-name-display">No file selected</p>
+  </div>
+
+  <button id="upload-btn" type="button" class="btn btn-primary">
+    Upload & Analyze
+  </button>
+</form>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
