@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | Smart Result Analysis</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-logo">🎓 Student Dashboard</h1>
+      <a href="/template/index.html" class="btn btn-outline-red">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Dashboard -->
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <div class="header-left">
+        <h1>Welcome, Priya Parate</h1>
+        <p>UID: 2025/CSE-DS/24006006| Sem: Three</p>
+      </div>
+      <div class="header-right">
+        <button class="btn btn-primary">📄 Download Report Card</button>
+      </div>
+    </div>
+
+    <!-- Overview Cards -->
+    <div class="overview-cards">
+      <div class="card"><div class="card-header"><span>Overall Score</span><span>📊</span></div><div class="card-content"><div class="card-number text-green">95.6%</div></div></div>
+      <div class="card"><div class="card-header"><span>Class Rank</span><span>🏆</span></div><div class="card-content"><div class="card-number text-blue">2</div></div></div>
+      <div class="card"><div class="card-header"><span>Grade</span><span>⭐</span></div><div class="card-content"><div class="card-number text-purple">A+</div></div></div>
+      <div class="card"><div class="card-header"><span>Performance</span><span>📈</span></div><div class="card-content"><div class="card-number text-green">Excellent</div></div></div>
+    </div>
+
+    <!-- Charts -->
+    <div class="tab-grid">
+      <div class="card">
+        <div class="card-header"><h3>📈 Progress Trend</h3></div>
+        <div class="card-content">
+          <canvas id="studentProgressChart" height="200"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>📚 Subject-wise Performance</h3></div>
+        <div class="card-content">
+          <canvas id="studentSubjectChart" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="card">
+      <div class="card-header"><h3>🏆 Achievements</h3></div>
+      <div class="card-content">
+        <div class="achievements-grid">
+          <div class="achievement"><div class="achievement-icon">🥇</div><h4>Subject Topper</h4><p>Science 98/100</p></div>
+          <div class="achievement"><div class="achievement-icon">⭐</div><h4>Consistent Performer</h4><p>A+ in all subjects</p></div>
+          <div class="achievement"><div class="achievement-icon">🥈</div><h4>Class Rank 2</h4></div>
+          <div class="achievement"><div class="achievement-icon">🎖️</div><h4>Distinction</h4></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
